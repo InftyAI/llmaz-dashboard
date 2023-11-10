@@ -1,8 +1,8 @@
 # Llmaz
 
-**Llmaz**, pronounced as `/lima:z/`, is a building block for users to build their own LLM from A to Z. **We're the aborigines of Kubernetes.**
+**Llmaz**, pronounced as `/lima:z/`, is a LLMOps platform for users to build their own LLM from A to Z. **We're the aborigines of Kubernetes.**
 
-This is mostly driven by several people who has great enthusiasm about AI in free time, if you're one of this kind of people, please join us.
+This is mostly driven by several people who has great enthusiasm about AI at spare time, if you're one of this kind of people, please join us.
 
 🚀 All kinds of contributions are welcomed ! Please follow [Contributing](/CONTRIBUTING.md).
 
@@ -21,7 +21,7 @@ This is mostly driven by several people who has great enthusiasm about AI in fre
 
  Still under development, **Let's see what will happen !**
 
-## 🚀 Contributors
+## 👏 Contributors
 
 Thanks to all these contributors. You're the heroes.
 
