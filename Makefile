@@ -1,6 +1,6 @@
 .PHONY: launch
 launch:
-	python llmaz/webui/webui.py
+	python main.py
 
 .PHONY: lint
 lint:
