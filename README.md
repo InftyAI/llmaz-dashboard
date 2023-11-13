@@ -8,7 +8,8 @@ This is mostly driven by several people who has great enthusiasm about AI at spa
 
 ## How to run
 
-`make launch`
+- Run locally: `make launch`
+- Run in cloud: WIP
 
 ## ✨ Features
 

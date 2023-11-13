@@ -3,34 +3,15 @@
 
 import gradio as gr
 
-from llmlite.apis import ChatMessage
+from llmaz.webui.engine import Engine
+from llmaz.webui.webui_serving import create_serving_webui
 
 
-def predict(message, history, system_prompt):
-    # TODO: Support loading models
-    # chat = ChatLLM(model_name_or_path="TODO")
-    messages = []
-    for i in range(0, len(history)):
-        messages.append(ChatMessage(role="user", content=history[i][0]))
-        messages.append(ChatMessage(role="assistant", content=history[i][1]))
+def launch_webui() -> gr.Blocks:
+    engine = Engine()
 
-    messages.append(ChatMessage(role="user", content=message))
+    with gr.Blocks(title="Llmaz") as blocks:
+        #  Serving Tab
+        create_serving_webui(engine)
 
-    # TODO: https://github.com/InftyAI/llmlite/issues/31
-    if system_prompt != "":
-        messages = [ChatMessage(role="system", content=system_prompt)] + messages
-
-    print("messages: ", messages)
-    return messages[-1].content + "-this-is-a-fake-message"
-    # return chat.completion(messages=messages)
-
-
-board = gr.ChatInterface(
-    predict,
-    additional_inputs=[
-        gr.Textbox("You are a helpful AI.", label="System Prompt"),
-    ],
-)
-
-if __name__ == "__main__":
-    board.queue().launch()
+    return blocks
