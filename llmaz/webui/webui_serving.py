@@ -17,7 +17,7 @@ def create_serving_webui(engine: Engine) -> gr.Tab:
         if system_prompt != "":
             messages = [ChatMessage(role="system", content=system_prompt)] + messages
 
-        return engine.completion(messages=messages)
+        return engine.serve.completion(messages=messages)
 
     with gr.Tab("Serving"):
         with gr.Row():
@@ -40,10 +40,10 @@ def create_serving_webui(engine: Engine) -> gr.Tab:
 
             #  TODO: https://github.com/InftyAI/Llmaz/issues/6
             load_btn.click(
-                fn=engine.preload_model,
+                fn=engine.serve.preload_model,
                 inputs=[model_name, task, temperature, stream],
             )
-            offload_btn.click(fn=engine.offload_model)
+            offload_btn.click(fn=engine.serve.offload_model)
 
         with gr.Tab("Chatbot"):
             gr.ChatInterface(
