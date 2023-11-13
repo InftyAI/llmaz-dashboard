@@ -6,6 +6,10 @@ This is mostly driven by several people who has great enthusiasm about AI at spa
 
 🚀 All kinds of contributions are welcomed ! Please follow [Contributing](/CONTRIBUTING.md).
 
+## How to run
+
+`make launch`
+
 ## ✨ Features
 
 - Foundational model management

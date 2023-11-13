@@ -1,3 +1,7 @@
+.PHONY: launch
+launch:
+	python llmaz/webui/webui.py
+
 .PHONY: lint
 lint:
 	mypy .
