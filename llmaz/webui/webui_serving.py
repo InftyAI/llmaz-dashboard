@@ -8,8 +8,6 @@ def create_serving_webui(engine: Engine) -> gr.Tab:
     def predict(message, history, system_prompt):
         messages = []
         for i in range(0, len(history)):
-            if history[i][0] is None:
-                continue
             messages.append(ChatMessage(role="user", content=history[i][0]))
             messages.append(ChatMessage(role="assistant", content=history[i][1]))
 
@@ -25,11 +23,11 @@ def create_serving_webui(engine: Engine) -> gr.Tab:
         with gr.Row():
             model_name = gr.Textbox(
                 label="model_name_or_path",
-                placeholder="required",
+                placeholder="this is required",
             )
             task = gr.Textbox(
                 label="task",
-                placeholder="optional, default to text-generation",
+                placeholder="this is optional, default to text-generation",
             )
 
         with gr.Accordion("click for more parameters...", open=False):
@@ -53,7 +51,7 @@ def create_serving_webui(engine: Engine) -> gr.Tab:
                 retry_btn=None,
                 undo_btn=None,
                 additional_inputs=[
-                    gr.Textbox(placeholder="optional", label="System Prompt"),
+                    gr.Textbox(placeholder="this is optional", label="system prompt"),
                 ],
             )
 
@@ -62,6 +60,3 @@ def create_serving_webui(engine: Engine) -> gr.Tab:
             pass
         with gr.Tab("RAG"):
             pass
-
-    with gr.Tab("Fine-Tuning"):
-        pass
