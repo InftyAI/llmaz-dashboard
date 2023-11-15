@@ -6,6 +6,7 @@ import gradio as gr
 from llmaz.webui.engine import Engine
 from llmaz.webui.webui_serving import create_serving_webui
 from llmaz.webui.webui_finetune import create_finetune_webui
+from llmaz.webui.webui_prompt import create_prompt_webui
 
 
 def launch_webui() -> gr.Blocks:
@@ -14,6 +15,8 @@ def launch_webui() -> gr.Blocks:
     with gr.Blocks(title="Llmaz") as blocks:
         #  Serving Tab
         create_serving_webui(engine)
+        #  Prompt Tab
+        create_prompt_webui(engine)
         #  Fine-tuning Tab
         create_finetune_webui(engine)
 

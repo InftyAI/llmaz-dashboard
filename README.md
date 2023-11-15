@@ -6,10 +6,14 @@ This is mostly driven by several people who has great enthusiasm about AI at spa
 
 🚀 All kinds of contributions are welcomed ! Please follow [Contributing](/CONTRIBUTING.md).
 
-## How to run
+## 🪂 How to run
 
-- Run locally: `make launch`
-- Run in cloud: WIP
+- Run locally:
+  - Step1: poetry install
+  - Step2: make launch
+- Run in cloud: still WIP
+
+![webui](./images/webui.jpg)
 
 ## ✨ Features
 

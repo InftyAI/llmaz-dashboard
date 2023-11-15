@@ -4,10 +4,8 @@ import torch
 
 class Chatbot:
     def __init__(self, model_name_or_path, task, **kwargs) -> None:
-        print(
-            " # self.chat = ChatLLM(model_name_or_path=model_name_or_path, task=task)"
-        )
         # self.__chat = ChatLLM(model_name_or_path=model_name_or_path, task=task)
+        pass
 
     def completion(self, messages) -> str:
         """
@@ -20,7 +18,7 @@ class Chatbot:
         """
         Reclaim GPU memory.
         """
-        #  FIXME: will this lead to memory leakage.
+        #  FIXME: will this lead to memory leakage?
         self.__chat = None
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
