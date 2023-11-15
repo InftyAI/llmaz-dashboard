@@ -4,6 +4,9 @@ from llmlite.apis import ChatMessage
 from llmaz.webui.engine import Engine
 
 
+loaded = False
+
+
 def create_serving_webui(engine: Engine) -> gr.Tab:
     def predict(message, history, system_prompt):
         messages = []
@@ -21,6 +24,7 @@ def create_serving_webui(engine: Engine) -> gr.Tab:
 
     with gr.Tab("Serving"):
         with gr.Row():
+            # TODO: required validation, see https://github.com/gradio-app/gradio/issues/2718
             model_name = gr.Textbox(
                 label="model_name_or_path",
                 placeholder="this is required",
@@ -35,15 +39,33 @@ def create_serving_webui(engine: Engine) -> gr.Tab:
             stream = gr.Checkbox(label="stream")
 
         with gr.Row():
-            load_btn = gr.Button("Preload Model")
-            offload_btn = gr.Button("Offload Model")
+            load_btn = gr.Button("Load Model", interactive=(not loaded))
+            offload_btn = gr.Button("Offload Model", interactive=loaded)
 
-            #  TODO: https://github.com/InftyAI/Llmaz/issues/6
+            # TODO: https://github.com/InftyAI/Llmaz/issues/6
             load_btn.click(
-                fn=engine.serve.preload_model,
+                fn=engine.preload_model,
                 inputs=[model_name, task, temperature, stream],
+            ).success(
+                lambda b: gr.update(interactive=False),
+                inputs=[load_btn],
+                outputs=[load_btn],
+            ).success(
+                lambda b: gr.update(interactive=True),
+                inputs=[offload_btn],
+                outputs=[offload_btn],
             )
-            offload_btn.click(fn=engine.serve.offload_model)
+            offload_btn.click(
+                fn=engine.offload_model,
+            ).success(
+                lambda b: gr.update(interactive=False),
+                inputs=[offload_btn],
+                outputs=[offload_btn],
+            ).success(
+                lambda b: gr.update(interactive=True),
+                inputs=[load_btn],
+                outputs=[load_btn],
+            )
 
         with gr.Tab("Chatbot"):
             gr.ChatInterface(

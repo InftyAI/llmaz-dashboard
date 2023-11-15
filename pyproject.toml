@@ -3,7 +3,7 @@ name = "llmaz"
 version = "0.1.0"
 description = "A LLMOps platform for users to build their own LLM from A to Z on Kubernetes."
 authors = ["kerthcet <kerthcet@gmail.com>"]
-license = "Apache2.0"
+license = "Apache-2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
