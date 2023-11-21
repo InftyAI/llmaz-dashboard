@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: registry.cn-shanghai.aliyuncs.com/inftyai/llmaz
+  repository: registry.cn-hongkong.aliyuncs.com/inftyai/llmaz
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "0.0.1-dev0"
 
 imagePullSecrets: []
 nameOverride: ""

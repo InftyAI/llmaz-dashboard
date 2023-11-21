@@ -8,10 +8,20 @@ This is mostly driven by several people who has great enthusiasm about AI at spa
 
 ## 🪂 How to run
 
-- Run locally:
-  - Step1: poetry install
-  - Step2: make launch
-- Run in cloud: still WIP
+### Prerequisites
+
+- [Helm](https://helm.sh/)
+- [Kind](https://kind.sigs.k8s.io/) (optional)
+
+### Install
+
+```
+$ git clone https://github.com/InftyAI/Llmaz.git
+$ kind create cluster (ignore this if you already have a Kubernetes cluster)
+$ helm install llmaz Llmaz/deploy/llmaz --create-namespace --namespace llmaz --set service.type=NodePort
+```
+
+**Visit http://localhost:7860 for WebUI**.
 
 ![webui](./images/webui.jpg)
 
