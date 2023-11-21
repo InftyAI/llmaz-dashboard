@@ -11,17 +11,18 @@ This is mostly driven by several people who has great enthusiasm about AI at spa
 ### Prerequisites
 
 - [Helm](https://helm.sh/)
-- [Kind](https://kind.sigs.k8s.io/) (optional)
+- [Kind](https://kind.sigs.k8s.io/)
 
 ### Install
 
-```
-$ git clone https://github.com/InftyAI/Llmaz.git
-$ kind create cluster (ignore this if you already have a Kubernetes cluster)
-$ helm install llmaz Llmaz/deploy/llmaz --create-namespace --namespace llmaz --set service.type=NodePort
+```shell
+git clone https://github.com/InftyAI/Llmaz.git
+kind create cluster # ignore this if you already have a Kubernetes cluster
+helm install llmaz Llmaz/deploy/llmaz --create-namespace --namespace llmaz
+kubectl port-forward svc/llmaz 7860:7860
 ```
 
-**Visit http://localhost:7860 for WebUI**.
+*Visit <http://localhost:7860> for WebUI*
 
 ![webui](./images/webui.jpg)
 
