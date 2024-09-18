@@ -1,6 +1,6 @@
 import gradio as gr
 
-from llmaz.webui.engine import Engine
+from console.webui.engine import Engine
 
 
 def create_finetune_webui(engine: Engine) -> gr.Tab:

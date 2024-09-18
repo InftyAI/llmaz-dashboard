@@ -1,4 +1,4 @@
-from llmaz.serves.serve import Serve
+from console.serve.serve import Serve
 
 
 class Engine:
