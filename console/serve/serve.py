@@ -1,4 +1,4 @@
-from llmaz.serves.chatbot import Chatbot
+from console.serve.chatbot import Chatbot
 
 
 class Serve:

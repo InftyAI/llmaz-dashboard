@@ -1,7 +1,7 @@
 import gradio as gr
 from llmlite.apis import ChatMessage
 
-from llmaz.webui.engine import Engine
+from console.webui.engine import Engine
 
 
 loaded = False
