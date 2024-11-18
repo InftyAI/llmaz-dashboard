@@ -1,16 +1,15 @@
 [tool.poetry]
-name = "console"
-version = "0.1.0"
-description = "Console for llmaz"
+name = "llmboard"
+version = "0.0.1"
+description = "ChatUI for LLMs on llmaz."
 authors = ["InftyAI Community"]
 license = "Apache-2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-gradio = "3.41.0"
-llmlite = "0.0.9"
-
+kubernetes = "^31.0.0"
+gradio = "^5.6.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"

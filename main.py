@@ -1,4 +1,4 @@
-from console.webui.webui import launch_webui
+from llmboard.webui.webui import launch_webui
 
 if __name__ == "__main__":
     webui = launch_webui()
