@@ -1,14 +1,13 @@
 import gradio as gr
 
 from llmchat.webui.engine import Engine
-from llmchat.webui.webui_serving import create_serving_webui
+from llmchat.webui.serving import create_serving_service
 
 
 def launch_webui() -> gr.Blocks:
     engine = Engine()
 
     with gr.Blocks(title="llmchat") as blocks:
-        #  Serving Tab
-        create_serving_webui(engine)
+        create_serving_service(engine)
 
     return blocks

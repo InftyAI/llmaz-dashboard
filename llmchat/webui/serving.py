@@ -6,7 +6,7 @@ from llmchat.webui.engine import Engine
 loaded = False
 
 
-def create_serving_webui(engine: Engine) -> gr.Tab:
+def create_serving_service(engine: Engine) -> gr.Tab:
     def predict(message, history, system_prompt):
         return f"message: {message}, history: {history}, system_prompt: {system_prompt}"
 
