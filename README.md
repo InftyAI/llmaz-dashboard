@@ -1,7 +1,17 @@
-# ChatUI for LLMs on llmaz
+# llmchat
 
-A console for [llmaz](https://github.com/InftyAI/llmaz) to interact with LLM workloads.
+llmchat is the default chat webui for inference platform [llmaz](https://github.com/InftyAI/llmaz).
 
-## How to deploy
+## How to Run
 
-Run `make launch` then visit `http://localhost:7860` for Console.
+- Run In Local: `make launch`.
+
+## Community
+
+Join us for more discussions:
+
+- **Slack Channel**: [#llmchat](https://inftyai.slack.com/archives/C08CGULVAPN)
+
+## Contributions
+
+All kinds of contributions are welcomed ! Please following [CONTRIBUTING.md](./CONTRIBUTING.md).
