@@ -1,7 +1,7 @@
 from kubernetes import client
 from kubernetes.client import CustomObjectsApi
 
-from llmboard.libs.consts import group, version, openmodel_plural
+from llmchat.client.consts import group, version, openmodel_plural
 
 
 def get_openmodel_objects(api: CustomObjectsApi, namespace: None):
